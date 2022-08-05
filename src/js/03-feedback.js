@@ -26,7 +26,8 @@ function fillInputs() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (savedData) {
     for (const key in savedData) {
-      document.querySelector(`[name = ${key}]`).value = savedData[key];
+      formData[key] = savedData[key];
+      refs.form.elements[key].value = savedData[key];
     }
   }
 }
